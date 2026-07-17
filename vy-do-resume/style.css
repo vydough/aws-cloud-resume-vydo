@@ -1,0 +1,505 @@
+/* ==========================================================================
+   Vy Do — Resume
+   Retro Mac-themed, matching the "Meet Mac" Webflow template
+   (hard shadows, thick black borders, Baloo Thambi 2, retro cursor)
+   ========================================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; /* 1rem = 10px, matches template scale */
+}
+
+html,
+body {
+  cursor: url('assets/cursor.png') 16 16, auto;
+  cursor: -webkit-image-set(
+    url('assets/cursor.png') 1x,
+    url('assets/cursor@2x.png') 2x
+  ) 16 16, auto;
+}
+
+button,
+.button {
+  cursor: url('assets/cursor-pointer.png') 16 16, pointer;
+  cursor: -webkit-image-set(
+    url('assets/cursor-pointer.png') 1x,
+    url('assets/cursor-pointer@2x.png') 2x
+  ) 16 16, pointer;
+}
+
+body {
+  margin: 0;
+  padding: 96px 20px 0;
+  min-height: 100%;
+  background-color: #000;
+  font-family: 'Baloo Thambi 2', sans-serif;
+  color: #000;
+  font-size: 2rem;
+  line-height: 2.6rem;
+  font-weight: 500;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 700;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 5.6rem;
+  line-height: 1;
+  margin-bottom: 36px;
+}
+
+h3 {
+  font-size: 2.6rem;
+  line-height: 1.2;
+  margin-bottom: 2px;
+}
+
+h4 {
+  font-size: 1.9rem;
+  margin-bottom: 6px;
+  margin-top: 22px;
+}
+
+h4:first-child {
+  margin-top: 0;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+ul {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 26px;
+  font-size: 1.8rem;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+li:last-child {
+  margin-bottom: 0;
+}
+
+/* -------------------- custom scrollbar -------------------- */
+
+::-webkit-scrollbar {
+  width: 16px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #ededed;
+  background-image: repeating-linear-gradient(45deg, #dcdcdc 0, #dcdcdc 1px, transparent 1px, transparent 6px);
+  border-left: 4px solid #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c4c4c4;
+  border: 4px solid #000;
+}
+
+::-webkit-scrollbar-thumb:hover,
+::-webkit-scrollbar-thumb:active {
+  background: #fff;
+}
+
+/* -------------------- header window chrome -------------------- */
+
+.header {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  padding: 14px 20px;
+  border: 4px solid #000;
+  border-radius: 6px;
+  background-color: #c4c4c4;
+  box-shadow: 6px 6px 0 0 #000;
+}
+
+.header-title {
+  flex: 1;
+  text-align: center;
+  font-size: 1.7rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.header-logo img {
+  display: block;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+.button-circles-wrap {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.button-circle {
+  width: 16px;
+  height: 16px;
+  border: 3px solid #000;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.header .button-circles-wrap {
+  width: 76px;
+}
+
+.header-logo {
+  width: 76px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* -------------------- layout helpers -------------------- */
+
+.site-container {
+  display: block;
+}
+
+.container {
+  width: 88vw;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section {
+  position: relative;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.hero-section {
+  padding-bottom: 40px;
+}
+
+/* -------------------- hero -------------------- */
+
+.grid-hero {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.heading-jumbo {
+  font-size: 8rem;
+  line-height: 0.92;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.subhead {
+  font-size: 2.2rem;
+  line-height: 3rem;
+  color: #fff;
+  margin-bottom: 28px;
+  max-width: 46ch;
+}
+
+.contact-strip {
+  margin-top: 20px;
+  color: #c4c4c4;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.button {
+  display: inline-block;
+  padding: 18px 28px;
+  border: 4px solid #000;
+  border-radius: 4px;
+  background-color: #c4c4c4;
+  color: #000;
+  font-family: inherit;
+  font-size: 2rem;
+  font-weight: 700;
+  box-shadow: 6px 6px 0 0 #000;
+  transition: transform 80ms ease, box-shadow 80ms ease, background-color 80ms ease, color 80ms ease;
+}
+
+.button:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.button:active {
+  transform: translate(4px, 4px);
+  box-shadow: 2px 2px 0 0 #000;
+}
+
+.hero-image-wrapper {
+  position: relative;
+}
+
+.mac {
+  width: 100%;
+  display: block;
+  filter: drop-shadow(10px 10px 0 rgba(0, 0, 0, 0.35));
+}
+
+.eye-circle {
+  position: absolute;
+  left: 42%;
+  top: 26.19%;
+  width: 16%;
+  height: 19.05%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.eye-pupil {
+  width: 50%;
+  will-change: transform;
+}
+
+/* -------------------- resume section -------------------- */
+
+.resume-section {
+  background-color: #fff;
+  border-top: 4px solid #000;
+  border-radius: 16px 16px 0 0;
+}
+
+.resume-section h2 {
+  color: #000;
+}
+
+.modal-wrapper {
+  display: flex;
+  flex-direction: column;
+  border: 4px solid #000;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 8px 8px 0 0 #000;
+  margin-bottom: 56px;
+}
+
+.modal-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 4px solid #000;
+  background-color: #c4c4c4;
+  font-weight: 700;
+}
+
+.flex-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
+  letter-spacing: 0.5px;
+}
+
+.modal-header .button-circles-wrap {
+  width: 60px;
+}
+
+.modal-body {
+  padding: 36px 40px;
+}
+
+.modal-body p:last-child,
+.modal-body ul:last-child {
+  margin-bottom: 0;
+}
+
+.entry-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px 20px;
+  margin-top: 26px;
+}
+
+.entry-row:first-child {
+  margin-top: 0;
+}
+
+.entry-date {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #555;
+  white-space: nowrap;
+}
+
+.entry-role {
+  font-style: italic;
+  font-weight: 600;
+  color: #333;
+  font-size: 1.7rem;
+  margin-bottom: 10px;
+}
+
+.entry-stack {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #555;
+  margin-top: -6px;
+  margin-bottom: 14px;
+}
+
+/* -------------------- quick-link style contact strip -------------------- */
+
+.quick-links-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  border: 4px solid #000;
+  border-radius: 4px;
+  background-color: #c4c4c4;
+  box-shadow: 8px 8px 0 0 #000;
+}
+
+.ql-item {
+  flex: 1;
+  min-width: 180px;
+  padding: 20px;
+  border-right: 4px solid #000;
+  font-size: 1.7rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.ql-item.last {
+  border-right: none;
+}
+
+/* -------------------- footer -------------------- */
+
+.footer-section {
+  background-color: #fff;
+  padding-top: 4px;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  padding: 24px 0 40px;
+  font-size: 1.4rem;
+  color: #666;
+}
+
+/* -------------------- scroll reveal -------------------- */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 480ms ease, transform 480ms ease;
+}
+
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* -------------------- responsive -------------------- */
+
+@media screen and (max-width: 900px) {
+  .grid-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .heading-jumbo {
+    font-size: 6.4rem;
+  }
+
+  .eye-circle {
+    display: none;
+  }
+
+  .mac {
+    max-width: 420px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    padding-top: 84px;
+  }
+
+  .header {
+    left: 10px;
+    right: 10px;
+    top: 10px;
+    padding: 10px 14px;
+  }
+
+  .heading-jumbo {
+    font-size: 4.8rem;
+  }
+
+  .subhead {
+    font-size: 1.9rem;
+    line-height: 2.6rem;
+  }
+
+  h2 {
+    font-size: 3.8rem;
+  }
+
+  .modal-body {
+    padding: 24px;
+  }
+
+  .entry-row {
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .quick-links-wrapper {
+    flex-direction: column;
+  }
+
+  .ql-item {
+    border-right: none;
+    border-bottom: 4px solid #000;
+  }
+
+  .ql-item.last {
+    border-bottom: none;
+  }
+}
+
+/* ----- view button ------- */
+
+.view-button {
+  display: flex;
+  padding: 10px;
+  justify-content: center; 
+  width: 100%;
+  border: 4px solid #000;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 8px 8px 0 0 #000;
+  margin-bottom: 56px;
+}
+
