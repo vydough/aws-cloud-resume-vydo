@@ -68,7 +68,7 @@ const counter = document.querySelector(".counter-number");
 async function updateCounter() {
   let response = await fetch("https://zc23ngen4iwnwqe6v5gtr6ojm40dfxbw.lambda-url.ap-southeast-2.on.aws/");
   let data = await response.json();
-  counter.innerHTML = ` Views: ${data}`;
+  counter.innerHTML = ` Live website visit counter:  ${data}`;
 }
 
 updateCounter();
