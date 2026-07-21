@@ -1,0 +1,14 @@
+# Terraform
+infrastructure/.terraform/
+infrastructure/*.tfstate
+infrastructure/*.tfstate.*
+infrastructure/*.tfvars
+infrastructure/crash.log
+infrastructure/packedlambda.zip
+
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Editor
+.vscode/
