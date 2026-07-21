@@ -72,7 +72,7 @@
           <h4>Programming &amp; Data I'm familar with:</h4>
           <p>Languages: Python, Java, JavaScript, SQL, JSON<br />Tools &amp; Platforms: VS Code, Git, Microsoft Office Suite, Kubernetes, Terraform</p>
           <h4>Cloud Experiences:</h4>
-          <p>AWS Services: EC2, IAM, S3, Networking and Security, Data Management, Deployment, understanding of compliance integration: Audit Manager, CloutTrail and Config</p>
+          <p>AWS Services: EC2, Lambda, S3, CloudFront, DynamoDB, IAM, Networking and Security, Data Management, Deployment, understanding of compliance integration: Audit Manager, CloudTrail and Config</p>
           <p>Azure Services: EntraID/Active Directory, Machine Scale Sets, IAM, Azure Storage  </p>
           <h4>AI, Machine Learning Experiences:</h4>
           <p>
@@ -107,7 +107,7 @@
         <div class="modal-body">
           <div class="entry-row">
             <h3>RMIT University</h3>
-            <div class="entry-date">Expected Graduation: 2026</div>
+            <div class="entry-date">Expected Completion: Mid-2027</div>
           </div>
           <p class="entry-role">Bachelor of Cybersecurity</p>
           <ul>
@@ -126,12 +126,15 @@
           <div class="entry-row">
             <h3>vy-do-resume</h3>
           </div>
-          <p class="entry-role">A retro Mac-themed interactive resume: the site you're on right now!</p>
-          <p class="entry-stack">HTML · CSS · JavaScript</p>
+          <p class="entry-role">My take on a retro Mac-themed interactive resume: the site you're on right now!</p>
+          <p class="entry-stack">HTML · CSS · JavaScript · Python · Terraform · AWS (S3, CloudFront, Lambda, DynamoDB) · GitHub Actions</p>
           <ul>
-            <li>Designed and built a single-page interactive resume styled after a retro Mac OS aesthetic, featuring hand-drawn pixel-art cursors, hard drop-shadow "window" cards, and a googly-eye illustration that tracks the mouse in real time</li>
-            <li>Structured all resume content into distinct terminal-style windows with one deliberate call to action, prioritising clean information architecture over unnecessary interactivity</li>
-            <li>Illustrated original SVG and pixel-art assets from scratch, including the cursor, logo, and hero graphic</li>
+            <li>Designed and built a single-page interactive résumé styled after a retro Mac OS aesthetic, featuring hand-drawn pixel-art cursors, hard drop-shadow “window” cards, and a main page illustration that tracks user mouse real-time</li>
+            <li>Structured all resume content, illustrated original SVG art assets including cursor, logo</li>
+            <li>Hosted the static site on Amazon S3, distributed via CloudFront for fast, HTTPS-secured delivery</li>
+            <li>Built a serverless visitor-counter API with an AWS Lambda function URL (Python, boto3) reading/writing live view counts to DynamoDB, called from the front end via JavaScript</li>
+            <li>Provisioned the Lambda function, IAM role/policy, and DynamoDB access as code using Terraform for repeatable, version-controlled deployments</li>
+            <li>Automated front-end deployments with a GitHub Actions CI/CD pipeline that syncs updated site code to S3 on every push to main</li>
           </ul>
         </div>
       </div>
