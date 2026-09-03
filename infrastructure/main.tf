@@ -5,7 +5,6 @@ resource "aws_lambda_function" "myfunc" {
     role = aws_iam_role.iam_for_lambda.arn
     handler = "func.lambda_handler"
     runtime = "python3.12"
-    reserved_concurrent_executions = 5
 }
 
 resource "aws_iam_role" "iam_for_lambda" {
